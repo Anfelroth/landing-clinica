@@ -1,0 +1,34 @@
+html{
+	height: 100%;
+}
+.jumbotron{
+	background-color: transparent;
+    background-position: top center;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    
+}
+
+/* LESS THAN 48 */
+@media (min-width: @screen-sm-min) { 
+	.jumbotron {
+		
+	background-image: url('../img/backgroudo_w_640.jpg'); 
+	}
+ }
+@media (min-width:@screen-md-min ) { 
+	.jumbotron {
+		
+	background-image: url('../img/backgroudo_w_640.jpg'); 
+	}
+ }
+
+/* LESS THAN 62 */
+@media (min-width: @screen-lg-min) { 
+	.jumbotron {
+		
+	background-image: url('../img/backgroudo_w_640.jpg'); 
+	}
+ }
+
