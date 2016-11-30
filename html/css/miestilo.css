@@ -1,3 +1,5 @@
+/*---MI ESTILO*/
+
 html{
 	height: 100%;
 }
@@ -11,24 +13,39 @@ html{
 }
 
 /* LESS THAN 48 */
-@media (min-width: @screen-sm-min) { 
-	.jumbotron {
-		
-	background-image: url('../img/backgroudo_w_640.jpg'); 
-	}
- }
-@media (min-width:@screen-md-min ) { 
+@media only screen and (min-width : 320px) { 
 	.jumbotron {
 		
 	background-image: url('../img/backgroudo_w_640.jpg'); 
 	}
  }
 
-/* LESS THAN 62 */
-@media (min-width: @screen-lg-min) { 
-	.jumbotron {
-		
-	background-image: url('../img/backgroudo_w_640.jpg'); 
-	}
+ @media only screen and (min-width : 480px) {
+  .jumbotron {
+    
+  background-image: url('../img/backgroudo_w_640.jpg'); 
+  }
  }
 
+@media only screen and (min-width : 768px) {
+.jumbotron {
+    
+  background-image: url('../img/backgroudo_w_640.jpg'); 
+  }
+ }
+
+ @media only screen and (min-width : 992px) {
+ .jumbotron {
+    
+  background-image: url('../img/backgroudo_w_1061.jpg'); 
+  }
+ }	
+ 
+
+    /* Large Devices, Wide Screens */
+ @media only screen and (min-width : 1200px) {
+ .jumbotron {
+    
+  background-image: url('../img/backgroudo_w_1400.jpg'); 
+  }
+ }	
