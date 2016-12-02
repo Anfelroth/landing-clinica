@@ -1,16 +1,16 @@
-var gulp = require('gulp');
-   concat= require('gulp-concat')
-   purify = require('gulp-purifycss');
-   cleanCSS = require('gulp-clean-css');
-   htmlreplace = require('gulp-html-replace');
-  
-   merge = require('merge-stream');
-   conn = require('gulp-connect');
-   ngrok = require('ngrok');
-   fs = require('fs');
-   minify= require('minify');
+var  gulp = require('gulp');
+     concat= require('gulp-concat')
+     purify = require('gulp-purifycss');
+     cleanCSS = require('gulp-clean-css');
+     htmlreplace = require('gulp-html-replace');
+     imagemin = require('imagemin');
+     imageminJpegtran = require('imagemin-jpegtran');
+     cache = require('gulp-cache')
+     conn = require('gulp-connect');
+     fs = require('fs');
+     minify= require('minify');
 
-const BUILD_PATH = './build';
+const BUILD_PATH = './build/public/';
 const SOURCE = {
   'BOOTSTRAP_CSS': './html/css/bootstrap.min.css',
   'AMPHTML': './amphtml/index.html',
@@ -38,7 +38,7 @@ gulp.task('connectProd', function () {
     livereload: true
   });
  });
-
+ 
 
 // purify remueve clases CSS sin usar  
 gulp.task('purify', function() {
@@ -71,5 +71,18 @@ gulp.task('inline-css', function()
     .pipe(gulp.dest(BUILD_PATH));
 });
 
+//tarea para las imagenes 
+gulp.task('images', function(){
+  imagemin(['./html/img/*.jpg'], 
+    './build/public/img', {optimizationLevel: 3,
+    use: [imageminJpegtran()]}).then(() => {
+    console.log('Images optimized');
+});
+});
+
 
     gulp.task('default', ['connectDev','connectProd','purify','Concatenar','inline-css']);
+
+
+
+
