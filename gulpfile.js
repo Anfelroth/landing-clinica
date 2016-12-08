@@ -52,9 +52,7 @@ gulp.task('purify', function() {
 gulp.task ('Concatenar', function() {
   return gulp.src([SOURCE.CLEANED_CSS,SOURCE.MI_ESTILO])
           .pipe(concat('files.css'))
-        .pipe(gulp.dest('./amphtml/css'))
-       
-         
+        .pipe(gulp.dest('./amphtml/css'))             
 });
 
 // inline-css inserta  CSS limpio y minificado en el HTML del build
